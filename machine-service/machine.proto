@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+service MachineService {
+rpc GetStatus (MachineRequest) returns (MachineResponse);
+rpc StreamPerformance (MachineRequest) returns (stream PerformanceResponse);
+}
+
+message MachineRequest {
+string machineId =1;
+}
+
+message MachineResponse{ 
+string status = 1;
+}
+
+message PerformanceResponse {
+double temperature = 1;
+double load = 2;
+}
