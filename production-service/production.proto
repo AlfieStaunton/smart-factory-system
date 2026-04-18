@@ -1,0 +1,15 @@
+//alice staunton - production.proto - 18.04.26
+
+syntax = "proto3";
+
+service ProductionService {
+rpc SendProductionData (stream ProductionRequest) returns (ProductionSummary);
+}
+
+message ProductionRequest {
+int32 unitsProduced = 1;
+}
+
+message ProductionSummary {
+int32 totalUnits= 1;
+}
