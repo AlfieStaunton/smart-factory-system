@@ -1,0 +1,11 @@
+// Alice Staunton - alert.proto - 21.4.26
+
+syntax = "proto3";
+
+service AlertService {
+rpc AlertStream (stream AlertMessage) returns (stream AlertMessage);
+}
+
+message AlertMessage {
+string message =1;
+}
