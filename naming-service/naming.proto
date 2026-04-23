@@ -1,0 +1,22 @@
+//alice staunton - naming.proto - 23.04.26
+
+syntax = "proto3";
+
+service NamingService {
+rpc RegisterServices (ServiceInfo) returns (RegisterResponse);
+rpc DiscoverService (ServiceRequest) returns (ServiceInfo);
+}
+
+message ServiceInfo {
+string name = 1;
+string address = 2;
+}
+
+message ServiceRequest {
+string name = 1;
+}
+
+message RegisterResponse {
+string message=1;
+}
+
