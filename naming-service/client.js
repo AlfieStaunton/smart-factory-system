@@ -6,11 +6,11 @@ const protoLoader = require ("@grpc/proto-loader");
 //load proto
 const packageDef = protoLoader.loadSync("naming.proto");
 const grpcObject = grpc.loadPackageDefinition(packageDef);
-const namingPackage= grpcObject;
+const namingPackage= grpcObject.NamingService;
 
 
 //create client
-const client = new namingPackage.NamingService(
+const client = new namingPackage(
 "localhost:50054",
 grpc.credentials.createInsecure()
 );
@@ -25,7 +25,7 @@ return;
 }
 
 console.log("Register response:", response);
-}
+
 
 //discover service
 client.DiscoverService(

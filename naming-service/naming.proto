@@ -3,7 +3,7 @@
 syntax = "proto3";
 
 service NamingService {
-rpc RegisterServices (ServiceInfo) returns (RegisterResponse);
+rpc RegisterService (ServiceInfo) returns (RegisterResponse);
 rpc DiscoverService (ServiceRequest) returns (ServiceInfo);
 }
 
